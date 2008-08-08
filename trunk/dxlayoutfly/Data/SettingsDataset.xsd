@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SettingsDataset" targetNamespace="http://tempuri.org/SettingsDataset.xsd" xmlns:mstns="http://tempuri.org/SettingsDataset.xsd" xmlns="http://tempuri.org/SettingsDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SettingsDataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="SettingsDataset" msprop:Generator_DataSetName="SettingsDataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AppSettings" msprop:Generator_UserTableName="AppSettings" msprop:Generator_RowDeletedName="AppSettingsRowDeleted" msprop:Generator_TableClassName="AppSettingsDataTable" msprop:Generator_RowChangedName="AppSettingsRowChanged" msprop:Generator_RowClassName="AppSettingsRow" msprop:Generator_RowChangingName="AppSettingsRowChanging" msprop:Generator_RowEvArgName="AppSettingsRowChangeEvent" msprop:Generator_RowEvHandlerName="AppSettingsRowChangeEventHandler" msprop:Generator_TablePropName="AppSettings" msprop:Generator_TableVarName="tableAppSettings" msprop:Generator_RowDeletingName="AppSettingsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Key" msprop:Generator_UserColumnName="Key" msprop:Generator_ColumnPropNameInRow="Key" msprop:Generator_ColumnVarNameInTable="columnKey" msprop:Generator_ColumnPropNameInTable="KeyColumn" type="xs:string" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SavedLayouts" msprop:Generator_UserTableName="SavedLayouts" msprop:Generator_RowDeletedName="SavedLayoutsRowDeleted" msprop:Generator_TableClassName="SavedLayoutsDataTable" msprop:Generator_RowChangedName="SavedLayoutsRowChanged" msprop:Generator_RowClassName="SavedLayoutsRow" msprop:Generator_RowChangingName="SavedLayoutsRowChanging" msprop:Generator_RowEvArgName="SavedLayoutsRowChangeEvent" msprop:Generator_RowEvHandlerName="SavedLayoutsRowChangeEventHandler" msprop:Generator_TablePropName="SavedLayouts" msprop:Generator_TableVarName="tableSavedLayouts" msprop:Generator_RowDeletingName="SavedLayoutsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LayoutID" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="LayoutID" msprop:Generator_ColumnPropNameInRow="LayoutID" msprop:Generator_ColumnVarNameInTable="columnLayoutID" msprop:Generator_ColumnPropNameInTable="LayoutIDColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="GridLayoutXML" msprop:Generator_UserColumnName="GridLayoutXML" msprop:Generator_ColumnPropNameInRow="GridLayoutXML" msprop:Generator_ColumnVarNameInTable="columnGridLayoutXML" msprop:Generator_ColumnPropNameInTable="GridLayoutXMLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportLayoutXML" msprop:Generator_UserColumnName="ReportLayoutXML" msprop:Generator_ColumnPropNameInRow="ReportLayoutXML" msprop:Generator_ColumnVarNameInTable="columnReportLayoutXML" msprop:Generator_ColumnPropNameInTable="ReportLayoutXMLColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ConnectionString" msprop:Generator_UserColumnName="ConnectionString" msprop:Generator_ColumnPropNameInRow="ConnectionString" msprop:Generator_ColumnVarNameInTable="columnConnectionString" msprop:Generator_ColumnPropNameInTable="ConnectionStringColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SelectSql" msprop:Generator_UserColumnName="SelectSql" msprop:Generator_ColumnPropNameInRow="SelectSql" msprop:Generator_ColumnVarNameInTable="columnSelectSql" msprop:Generator_ColumnPropNameInTable="SelectSqlColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="DateCreated" msprop:Generator_UserColumnName="DateCreated" msprop:Generator_ColumnPropNameInRow="DateCreated" msprop:Generator_ColumnVarNameInTable="columnDateCreated" msprop:Generator_ColumnPropNameInTable="DateCreatedColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateModified" msprop:Generator_UserColumnName="DateModified" msprop:Generator_ColumnPropNameInRow="DateModified" msprop:Generator_ColumnVarNameInTable="columnDateModified" msprop:Generator_ColumnPropNameInTable="DateModifiedColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AppSettings" />
+      <xs:field xpath="mstns:Key" />
+    </xs:unique>
+    <xs:unique name="SavedLayouts_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SavedLayouts" />
+      <xs:field xpath="mstns:LayoutID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
