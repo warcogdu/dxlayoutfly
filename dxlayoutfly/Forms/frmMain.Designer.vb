@@ -25,6 +25,7 @@ Partial Class frmMain
     Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem
     Me.bbiNewLayout = New DevExpress.XtraBars.BarButtonItem
     Me.BarSubItem4 = New DevExpress.XtraBars.BarSubItem
+    Me.bbiShowSavedLayouts = New DevExpress.XtraBars.BarButtonItem
     Me.beiSkin = New DevExpress.XtraBars.BarEditItem
     Me.riCboSkin = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Me.BarSubItem3 = New DevExpress.XtraBars.BarSubItem
@@ -36,7 +37,7 @@ Partial Class frmMain
     Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
     Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem
     Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
-    Me.bbiShowSavedLayouts = New DevExpress.XtraBars.BarButtonItem
+    Me.BarMdiChildrenListItem1 = New DevExpress.XtraBars.BarMdiChildrenListItem
     CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.riCboSkin, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,9 +51,9 @@ Partial Class frmMain
     Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
     Me.BarManager1.DockControls.Add(Me.barDockControlRight)
     Me.BarManager1.Form = Me
-    Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarSubItem2, Me.bbiNewLayout, Me.BarSubItem3, Me.bbiAbout, Me.BarSubItem4, Me.beiSkin, Me.bbiShowSavedLayouts})
+    Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarSubItem1, Me.BarSubItem2, Me.bbiNewLayout, Me.BarSubItem3, Me.bbiAbout, Me.BarSubItem4, Me.beiSkin, Me.bbiShowSavedLayouts, Me.BarMdiChildrenListItem1})
     Me.BarManager1.MainMenu = Me.Bar2
-    Me.BarManager1.MaxItemId = 8
+    Me.BarManager1.MaxItemId = 9
     Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.riCboSkin})
     Me.BarManager1.StatusBar = Me.Bar3
     '
@@ -62,7 +63,7 @@ Partial Class frmMain
     Me.Bar2.DockCol = 0
     Me.Bar2.DockRow = 0
     Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-    Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem1), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem3)})
+    Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem1), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.BarMdiChildrenListItem1), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem3)})
     Me.Bar2.OptionsBar.AllowQuickCustomization = False
     Me.Bar2.OptionsBar.DrawDragBorder = False
     Me.Bar2.OptionsBar.MultiLine = True
@@ -88,6 +89,13 @@ Partial Class frmMain
     Me.BarSubItem4.Id = 5
     Me.BarSubItem4.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiShowSavedLayouts), New DevExpress.XtraBars.LinkPersistInfo(Me.beiSkin)})
     Me.BarSubItem4.Name = "BarSubItem4"
+    '
+    'bbiShowSavedLayouts
+    '
+    Me.bbiShowSavedLayouts.Caption = "Saved Layouts"
+    Me.bbiShowSavedLayouts.Id = 7
+    Me.bbiShowSavedLayouts.ItemShortcut = New DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F4)
+    Me.bbiShowSavedLayouts.Name = "bbiShowSavedLayouts"
     '
     'beiSkin
     '
@@ -142,12 +150,11 @@ Partial Class frmMain
     '
     Me.XtraTabbedMdiManager1.MdiParent = Me
     '
-    'bbiShowSavedLayouts
+    'BarMdiChildrenListItem1
     '
-    Me.bbiShowSavedLayouts.Caption = "Saved Layouts"
-    Me.bbiShowSavedLayouts.Id = 7
-    Me.bbiShowSavedLayouts.ItemShortcut = New DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F4)
-    Me.bbiShowSavedLayouts.Name = "bbiShowSavedLayouts"
+    Me.BarMdiChildrenListItem1.Caption = "Window"
+    Me.BarMdiChildrenListItem1.Id = 8
+    Me.BarMdiChildrenListItem1.Name = "BarMdiChildrenListItem1"
     '
     'frmMain
     '
@@ -184,4 +191,5 @@ Partial Class frmMain
   Friend WithEvents beiSkin As DevExpress.XtraBars.BarEditItem
   Friend WithEvents riCboSkin As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
   Friend WithEvents bbiShowSavedLayouts As DevExpress.XtraBars.BarButtonItem
+  Friend WithEvents BarMdiChildrenListItem1 As DevExpress.XtraBars.BarMdiChildrenListItem
 End Class
