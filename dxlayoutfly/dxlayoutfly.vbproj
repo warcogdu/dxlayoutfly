@@ -87,6 +87,12 @@
     <Compile Include="Forms\frmSavedLayouts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ReportDesignerForm.Designer.vb">
+      <DependentUpon>ReportDesignerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportDesignerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modules\G.vb" />
     <Compile Include="Modules\SimpleEncryption.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -104,11 +110,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Reports\DynamicReport.Designer.vb">
       <DependentUpon>DynamicReport.vb</DependentUpon>
     </Compile>
     <Compile Include="Reports\DynamicReport.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRDesignRibbonControllerResources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRDesignRibbonControllerResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -124,12 +140,26 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmSavedLayouts.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportDesignerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReportDesignerForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XRDesignRibbonControllerResources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
