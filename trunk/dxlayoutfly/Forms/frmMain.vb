@@ -62,4 +62,8 @@ Public Class frmMain
     f.Show()
   End Sub
 
+  Private Sub bbiShowSavedLayouts_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiShowSavedLayouts.ItemClick
+    Me.ShowSavedlayouts()
+  End Sub
+
 End Class

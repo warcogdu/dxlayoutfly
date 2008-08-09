@@ -27,24 +27,60 @@ Module G
     If IO.File.Exists(G.SettingsFile) Then
       Try
         mSettings.ReadXml(G.SettingsFile)
+        G.DecryptSettings(mSettings)
       Catch ex As Exception
         DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error loading settings")
       End Try
     End If
 
   End Sub
-
   Public Sub SaveSettingsData()
 
     If mSettings Is Nothing Then Return
 
     Try
+      G.EncryptSettings(mSettings)
       mSettings.WriteXml(G.SettingsFile)
+      'decrypt so we can cont working with this
+      G.DecryptSettings(mSettings)
     Catch ex As Exception
       DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error Saving settings")
     End Try
 
   End Sub
+
+  Private Sub DecryptSettings(ByVal settingData As SettingsDataset)
+    If settingData Is Nothing Then Return
+
+    If mSettings.SavedLayouts.Rows.Count = 0 Then Return
+
+    For Each dr As SettingsDataset.SavedLayoutsRow In mSettings.SavedLayouts.Rows
+      'Connection Strings (as they are sensitive)
+      If dr.ConnectionString <> "" Then
+        dr.ConnectionString = SimpleEncryption.DeCryptString(dr.ConnectionString)
+      End If
+    Next
+
+    mSettings.AcceptChanges()
+
+  End Sub
+
+  Private Sub EncryptSettings(ByVal settingData As SettingsDataset)
+    If settingData Is Nothing Then Return
+
+    If mSettings.SavedLayouts.Rows.Count = 0 Then Return
+
+    For Each dr As SettingsDataset.SavedLayoutsRow In mSettings.SavedLayouts.Rows
+      'Connection Strings (as they are sensitive)
+      dr.BeginEdit()
+      dr.ConnectionString = SimpleEncryption.EncryptString(dr.ConnectionString)
+      dr.EndEdit()
+    Next
+
+    mSettings.AcceptChanges()
+
+  End Sub
+
 
   Public ReadOnly Property SettingsFile() As String
     Get
