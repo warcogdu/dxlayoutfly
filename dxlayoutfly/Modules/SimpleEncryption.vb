@@ -114,10 +114,10 @@ Module SimpleEncryption
 
     Dim intLength As Integer
     Dim intRemaining As Integer
-    Dim intCtr As Integer
+    'Dim intCtr As Integer
     Dim strReturnString As String = String.Empty
-    Dim achrCharacterArray() As Char
-    Dim intIndex As Integer
+    'Dim achrCharacterArray() As Char
+    'Dim intIndex As Integer
 
     '   *****************************************************************
     '   ******   Convert base64 encrypted value to byte array      ******

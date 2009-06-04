@@ -19,10 +19,10 @@ Public Class DynamicReport
     ms.AddCommand(New System.ComponentModel.Design.MenuCommand(New EventHandler(AddressOf OnReportDesignerSaveFile), DevExpress.XtraReports.UserDesigner.Native.UICommands.SaveFile))
 
     'Hide data fields box
-    'Dim df As DevExpress.XtraReports.UserDesigner.XRDesignFormEx = CType(Me.Site.GetService(GetType(DevExpress.XtraReports.UserDesigner.XRDesignFormEx)), DevExpress.XtraReports.UserDesigner.XRDesignFormEx)
+    Dim df As DevExpress.XtraReports.UserDesigner.XRDesignFormEx = CType(Me.Site.GetService(GetType(DevExpress.XtraReports.UserDesigner.XRDesignFormEx)), DevExpress.XtraReports.UserDesigner.XRDesignFormEx)
 
-    'If Not df Is Nothing Then df.SetWindowVisibility(DevExpress.XtraReports.UserDesigner.DesignDockPanelType.FieldList, False)
-    If Not Me.DesignFormEx Is Nothing Then Me.DesignFormEx.SetWindowVisibility(DevExpress.XtraReports.UserDesigner.DesignDockPanelType.FieldList, False)
+    If Not df Is Nothing Then df.SetWindowVisibility(DevExpress.XtraReports.UserDesigner.DesignDockPanelType.FieldList, False)
+    'If Not Me.DesignFormEx Is Nothing Then Me.DesignFormEx.SetWindowVisibility(DevExpress.XtraReports.UserDesigner.DesignDockPanelType.FieldList, False)
 
   End Sub
 
